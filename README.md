@@ -20,3 +20,7 @@ $ python game.py <file> [fps=6]
 # e.g.
 $ python game.py examples/glider 2
 ```
+
+## Contributing
+
+Feel free to submitting pull requests.
