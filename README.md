@@ -4,7 +4,8 @@
     <img alt="License File" src="https://img.shields.io/github/license/Pagliacii/game-of-life?style=for-the-badge">
 </a>
 
-[Details](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)
+- [Conway's Game of Life](https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life)
+- [Kata](https://en.wikipedia.org/wiki/Kata_(programming))
 
 ## Implementations
 
