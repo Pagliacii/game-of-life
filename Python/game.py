@@ -26,7 +26,7 @@
 # Author:             Pagliacii
 # Last Modified By:   Pagliacii
 # Created Date:       2021-08-01 17:51:14
-# Last Modified Date: 2021-08-01 23:51:05
+# Last Modified Date: 2021-08-02 22:51:49
 
 import sys
 import time
@@ -51,7 +51,9 @@ class Game:
         self._erase()
         for row in self._frame:
             for cell in row:
-                sys.stdout.write("*" if cell else " ")
+                sys.stdout.write(
+                    "\N{White Large Square}" if cell else "\N{Black Large Square}"
+                )
             sys.stdout.write("\n")
             sys.stdout.flush()
 
