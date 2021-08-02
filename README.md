@@ -9,17 +9,9 @@
 
 ## Implementations
 
-<a href="./game.py">
+<a href="./Python">
     <img alt="Python Version" src="https://img.shields.io/badge/-Python-3776ab?style=for-the-badge&logo=python&logoColor=white">
 </a>
-
-## Usage
-
-```shell
-$ python game.py <file> [fps=6]
-# e.g.
-$ python game.py examples/glider 2
-```
 
 ## Contributing
 
