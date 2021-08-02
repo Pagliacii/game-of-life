@@ -13,6 +13,10 @@
     <img alt="Python Version" src="https://img.shields.io/badge/-Python-3776ab?style=for-the-badge&logo=python&logoColor=white">
 </a>
 
+## Screencasts
+
+![Python](Python/assets/game-of-life.gif)
+
 ## Contributing
 
 Feel free to submitting pull requests.
