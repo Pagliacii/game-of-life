@@ -26,7 +26,7 @@
 # Author:             Pagliacii
 # Last Modified By:   Pagliacii
 # Created Date:       2021-08-01 17:51:14
-# Last Modified Date: 2021-08-02 22:51:49
+# Last Modified Date: 2021-08-03 09:36:47
 
 import sys
 import time
@@ -58,18 +58,22 @@ class Game:
             sys.stdout.flush()
 
     def _erase(self) -> None:
-        """Erases the existed board"""
-        for _ in range(self._row):
-            self._erase_one_row()
-            # Go to the end of previous row
-            sys.stdout.write("\033[A")
-            sys.stdout.flush()
-        sys.stdout.write("\r")
+        """Erases all existed characters"""
+        sys.stdout.write("\033[2J")
         sys.stdout.flush()
 
-    def _erase_one_row(self) -> None:
-        """Erases one row on the board"""
-        sys.stdout.write("\033[2K")
+    def _reset_cursor(self) -> None:
+        """Moves the cursor to top-left corner"""
+        sys.stdout.write("\033[H")
+        sys.stdout.flush()
+
+    def _hide_cursor(self) -> None:
+        """Hides the cursor"""
+        sys.stdout.write("\033[?25l")
+        sys.stdout.flush()
+
+    def _show_cursor(self) -> None:
+        sys.stdout.write("\033[?25h")
         sys.stdout.flush()
 
     def set_first_frame(self, frame: str) -> None:
@@ -128,6 +132,8 @@ class Game:
 
     def run(self) -> None:
         """Starts the game"""
+        self._erase()
+        self._hide_cursor()
         tic: int = 0
         while True:
             try:
@@ -138,12 +144,14 @@ class Game:
                 elif toc - tic < self._delta:
                     # It isn't time to refresh
                     continue
+                self._reset_cursor()
                 # Draws the current board
                 self._draw()
                 # Prepares next board
                 self._gen_next_frame()
                 tic = time.perf_counter_ns()
             except KeyboardInterrupt:
+                self._show_cursor()
                 break
 
 
